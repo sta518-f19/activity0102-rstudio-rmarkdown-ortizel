@@ -40,18 +40,20 @@ dino_data %>%
 The correlation coefficient is -.0645.
 ### Exercise 3
 
-(Add code and narrative as needed. Note that the R chunks are labeled with `plot-star` and `cor-star` to provide spaces to place the code for plotting and calculating the correlation coefficient. To finish, clean up the narrative by removing these instructions.)
-
-Blah blah blah...
-
+We update the code to produce a visualization of the star dataset. The code below is what was used.  
 ```{r plot-star}
+star_data <- datasaurus_dozen %>%
+  filter(dataset == "star")
 
+ggplot(data = star_data, mapping = aes(x = x, y = y)) +
+  geom_point()
 ```
 
-I'm some text, you should replace me with more meaningful text...
+We also found the correlatin coefficient with the code below. We found the correlation coefficient to be -.0630.
 
 ```{r cor-star}
-
+star_data %>%
+  summarize(r = cor(x, y))
 ```
 
 ### Exercise 4
